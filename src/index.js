@@ -25,11 +25,8 @@ class Ui extends React.Component{
 		if (display.length < 9) {
 			if (display == 0 && input != '.' && display.length<2)
 				display = '';
-
-
 			display += input == '.' && (display.includes('.') || display.length == 8) ? '' : input;
-			this.setState({
-				display: display, curr: parseFloat(display), readyToRefresh: true
+			this.setState({ display: display, curr: parseFloat(display), readyToRefresh: true
 			});
 		}
 	}
@@ -67,12 +64,7 @@ class Ui extends React.Component{
 
 		if (this.state.res > 999999999 || this.state.res < 0) {
 			this.setState({
-				op: null,
-				res: null,
-				display: 'ERROR',
-				readyToRefresh: false,
-				curr: null,
-				lsBtn: ''
+				op: null, res: null, display: 'ERROR', readyToRefresh: false, curr: null, lsBtn: ''
 			})
 			return;
 		} else {
@@ -86,8 +78,6 @@ class Ui extends React.Component{
 		}
 
 	}
-
-
 	operation(input){
 		switch (input) {
 			case "1":
